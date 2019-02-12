@@ -112,28 +112,38 @@ export default {
                 {
                     label:'我的关注',
                     icon:require('../../assets/p6.png'),
+                    path:'/certification/index',
                     click:this.openPage
                 },
                 {
                     label:'评论/留言',
-                    icon:require('../../assets/p7.png')
+                    icon:require('../../assets/p7.png'),
+                    path:'/shoppingcart/index',
+                    click:this.openPage
                 },
                 {
                     label:'我的钱包',
-                    icon:require('../../assets/p8.png')
+                    icon:require('../../assets/p8.png'),
+                    path:'',
+                    click:this.openPage
                 },
                 {
                     label:'我的认证',
                     icon:require('../../assets/p9.png'),
+                    path:'',
                     click:this.openPage
                 },
                 {
                     label:'我的客服',
-                    icon:require('../../assets/p10.png')
+                    icon:require('../../assets/p10.png'),
+                    path:'',
+                    click:this.openPage
                 },
                 {
                     label:'我的足迹',
-                    icon:require('../../assets/p11.png')
+                    icon:require('../../assets/p11.png'),
+                    path:'',
+                    click:this.openPage
                 }
             ]
         }
@@ -144,10 +154,12 @@ export default {
         },
         openPage(obj){
             console.log(obj)
+            if(!!obj.path)
+                this.$router.push(obj.path);
         }
     },
     mounted(){
-        //console.log(process)
+        this.$store.commit('setNavigationBarTitle','');
     },
     components:{
         grid,

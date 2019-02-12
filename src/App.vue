@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <div class="navigation" v-if="!!$store.state.navigationBarTitle">
+      <i class="cubeic-back" @click="back"></i>
+      {{$store.state.navigationBarTitle}}
+    </div>
     <div class="router">
       <router-view/>
     </div>
@@ -8,7 +12,16 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods:{
+    back(){
+      this.$router.go(-1);
+    }
+  },
+  mounted(){
+    this.$util.winWidth=document.body.offsetWidth;
+    this.$util.winHeight=document.body.offsetHeight;
+  }
 }
 </script>
 
@@ -23,12 +36,29 @@ export default {
   flex-direction: column;
   background: #fff;
 }
+.navigation{
+  width: 100%;
+  line-height: 5rem;
+  text-align: center;
+  position: relative;
+  color: #333;
+  border-bottom:1px solid #f9f9f9;
+  flex-shrink: 0;
+  font-size: 1.6rem;
+}
+.navigation i{
+  position: absolute;
+  top: 0;
+  left: 1rem;
+}
 .router{
-  height: 100%;
+  flex-grow: 1;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  display: flex;
 }
 .router > div{
-  height: 100%;
+  flex-grow: 1;
+  /* height: 100%; */
 }
 </style>

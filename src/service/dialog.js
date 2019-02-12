@@ -20,7 +20,7 @@ export const dialog={
                 node:node
             }
         })
-        options.target.appendChild(_D.$el)
+        document.body.appendChild(_D.$el)
     }
 }
 //export {dialog};

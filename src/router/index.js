@@ -23,6 +23,26 @@ export default new Router({
       path: '/signIn',
       name: 'signIn',
       component: resolve => require(['../views/signIn/signIn.vue'], resolve)
+    },
+    {
+      path: '/certification/index',
+      name: 'certification',
+      component: resolve => require(['../views/personal/certification/index.vue'], resolve)
+    },
+    {
+      path: '/certification/face',
+      name: 'certification_face',
+      component: resolve => require(['../views/personal/certification/face.vue'], resolve)
+    },
+    {
+      path: '/certification/phone',
+      name: 'certification_phone',
+      component: resolve => require(['../views/personal/certification/modifyPhone.vue'], resolve)
+    },
+    {
+      path: '/shoppingcart/index',
+      name: 'shoppingcart',
+      component: resolve => require(['../views/shoppingcart/index.vue'], resolve)
     }
   ]
 })

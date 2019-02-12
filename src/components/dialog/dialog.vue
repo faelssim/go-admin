@@ -7,7 +7,10 @@ export default {
     name:'g-dialog',
     mounted(){
         const _cnode=new this.node({
-            el:document.createElement('div')
+            el:document.createElement('div'),
+            data:{
+                parentNode:this.$refs.dialog
+            }
         });
         this.$refs.dialog.appendChild(_cnode.$el);
     }

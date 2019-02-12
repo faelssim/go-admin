@@ -10,8 +10,11 @@
                 </li>
             </ul>
         </div>
-        <div></div>
-        <!-- <img src="../../assets/p14.png" alt=""> -->
+        <div>
+            <div class="g-s-btn" v-tap="close">关闭</div>
+            <div class="g-s-btn">我的积分</div>
+        </div>
+        <img src="../../assets/p14.png" alt="">
     </div>
 </template>
 <script>
@@ -20,6 +23,11 @@ export default {
         return {
             day:4,
             score:[2,3,4,5,6,8,10]
+        }
+    },
+    methods:{
+        close(){
+            document.body.removeChild(this.parentNode);
         }
     }
 }
@@ -33,7 +41,7 @@ export default {
         border-radius: 1rem;
         position: relative;
         >div:nth-child(1){
-            padding-top: 4rem;
+            padding-top: 6rem;
             .flex-column-center;
             span{
                 font-size: 2rem;
@@ -95,15 +103,32 @@ export default {
         }
         >div:nth-child(2){
             .flex-row-center;
+            width: 100%;
             background: #f2f2f2;
             padding: 2rem 0;
             border-bottom-left-radius: 1rem;
             border-bottom-right-radius: 1rem;
+            .g-s-btn{
+                width: 30%;
+                line-height: 3.6rem;
+                border-radius: 3.6rem;
+                background: #fff;
+                text-align: center;
+                color: @font-color-4;
+                font-size: 1.4rem;
+            }
+            .g-s-btn+.g-s-btn{
+                background: @main-color;
+                color:#fff;
+                margin-left: 5%;
+            }
         }
-        img{
-            width: 4rem;
+        >img{
+            width: 8rem;
             position: absolute;
-            top:-5rem;
+            top:0;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
         }
     }
 </style>

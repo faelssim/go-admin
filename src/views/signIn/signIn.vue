@@ -44,8 +44,7 @@ export default {
         },
         showAlert() {
             dialog.open({
-                type:'component',
-                target:this.$refs.bottom
+                type:'component'
             },null,score);
         }
     },
